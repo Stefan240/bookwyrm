@@ -3,6 +3,9 @@
 {% load i18n %}
 {% load date_ext %}
 
-Code to get translator here!
+{% if book.translator %}
+<!-- Add blocktrans in here as well later -->
+    Translated by {{ book.translator }}
+{% endif %}
 
 {% endspaceless %}
