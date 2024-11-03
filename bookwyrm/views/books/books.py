@@ -89,8 +89,6 @@ class Book(View):
         )
         data = {
             "book": book,
-            # it certainly cannot be right to just pass an empty string here right? It does work but kinda seems wrong
-            "translator": str(),
             "statuses": paginated.get_page(request.GET.get("page")),
             "review_count": reviews.count(),
             "ratings": (
