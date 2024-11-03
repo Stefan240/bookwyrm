@@ -466,6 +466,9 @@ class Edition(Book):
     publishers = fields.ArrayField(
         models.CharField(max_length=255), blank=True, default=list
     )
+    translator = fields.CharField(
+        max_length=255, blank=True, null=True
+    )
     shelves = models.ManyToManyField(
         "Shelf",
         symmetrical=False,
