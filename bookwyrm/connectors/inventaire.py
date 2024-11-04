@@ -46,8 +46,10 @@ class Connector(AbstractConnector):
             ),
             Mapping("subjects", remote_field="wdt:P921", formatter=self.resolve_keys),
             Mapping("asin", remote_field="wdt:P5749", formatter=get_first),
+            # Right Now this throws the error: 'Edition' object has no attribute 'translator'
+            Mapping("translator", remote_field="wdt:P655", formatter=self.resolve_keys),
         ] + shared_mappings
-        # TODO: P136: genre, P674 characters, P950 bne
+        # TODO: P136: genre, P674 characters, P950 bne, P655 translator
 
         self.author_mappings = [
             Mapping("id", remote_field="uri", formatter=self.get_remote_id),
